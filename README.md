@@ -29,3 +29,9 @@ Plugins expect Lazy pluin manager
 This configuration has been tested on MacOS and Linux. It should work on Windows as well, but I haven't tested it. I am using different user configurations for my windows workstation.
 
 Currently using with Neovim 0.10.0
+
+## Screenshot
+
+Following is a screenshot of the configuration in Iterm2 with semi transparent background settings.
+
+![screenshot](https://raw.githubusercontent.com/Lilanga/astrovim-config/main/doc/screenshot.png?raw=true)
