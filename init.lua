@@ -79,6 +79,9 @@ return {
     require('lualine').setup()
     require("bufferline").setup()
     require("ibl").setup()
+    require("nvim-autopairs").setup()
+    require("notify").setup()
+    require("lspkind").init()
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
