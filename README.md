@@ -21,7 +21,7 @@ Plugins expect Lazy pluin manager
 3. Clone this repository to your home directory
 
     ```bash
-    git clone
+    git clone git@github.com:Lilanga/astrovim-config.git ~/.config/nvim/lua/user
     ```
 
 ## OS / Environment tested
