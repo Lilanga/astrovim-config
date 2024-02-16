@@ -30,8 +30,10 @@ This configuration has been tested on MacOS and Linux. It should work on Windows
 
 Currently using with Neovim 0.10.0
 
-## Screenshot
+## Screenshots
 
-Following is a screenshot of the configuration in Iterm2 with semi transparent background settings.
+Following are screenshots of the applied NVIM configuration. I am using Iterm2 with semi transparent background settings. The font used is Fira Code.
 
-![screenshot](https://raw.githubusercontent.com/Lilanga/astrovim-config/main/doc/screenshot.png?raw=true)
+![Welcome screen](https://raw.githubusercontent.com/Lilanga/astrovim-config/main/doc/welcome.png)
+
+![Editor screen](https://raw.githubusercontent.com/Lilanga/astrovim-config/main/doc/screenshot.png)
