@@ -11,7 +11,7 @@ return {
             path = 1,
 
             file_status = true, -- Displays file status (readonly status, modified status)
-            newfile_status = false, -- Display new file status (new file means no write after created)
+            newfile_status = true, -- Display new file status (new file means no write after created)
 
             shorting_target = 40, -- Shortens path to leave 40 spaces in the window
             -- for other components. (terrible name, any suggestions?)

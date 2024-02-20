@@ -6,19 +6,20 @@ local colors = {
     black = '#181818',
     light_green = '#38c26b',
     orange = '#fe8019',
-    green = '#8ec07c',
+    magenta = '#990099',
+    grey = '#666699',
   }
   
   local theme = {
     normal = {
       a = { fg = colors.white, bg = colors.yellow },
       b = { fg = colors.white, bg = colors.black },
-      c = { fg = colors.black, bg = colors.blue },
+      c = { fg = colors.white, bg = colors.blue },
       z = { fg = colors.white, bg = colors.grey },
     },
     insert = { a = { fg = colors.black, bg = colors.light_green } },
     visual = { a = { fg = colors.black, bg = colors.orange } },
-    replace = { a = { fg = colors.black, bg = colors.green } },
+    replace = { a = { fg = colors.black, bg = colors.magenta } },
   }
   
   local empty = require('lualine.component'):extend()
@@ -60,6 +61,16 @@ local colors = {
     return last_search .. '(' .. searchcount.current .. '/' .. searchcount.total .. ')'
   end
   
+  local utils = require "user.util.utils"
+  local function lsp_clients()
+    local clients = vim.lsp.get_active_clients()
+    local clients_list = {}
+    for _, client in pairs(clients) do
+      table.insert(clients_list, client.name)
+    end
+    return utils.dump(clients_list, ' ')
+  end
+
   local function modified()
     if vim.bo.modified then
       return '+'
@@ -114,7 +125,9 @@ local colors = {
         },
       },
       lualine_c = {},
-      lualine_x = {},
+      lualine_x = {
+        { lsp_clients, color = { bg = colors.light_green, fg = colors.black} },
+        'encoding'},
       lualine_y = { search_result, 'filetype' },
       lualine_z = { '%l:%c', '%p%%/%L' },
     },
