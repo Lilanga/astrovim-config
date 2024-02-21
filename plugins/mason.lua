@@ -1,5 +1,6 @@
 -- customize mason plugins
 return {
+  {"neovim/nvim-lspconfig"},
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",
@@ -16,7 +17,8 @@ return {
         "json-lsp",
         "jsonlint",
         "prettier",
-        "eslint_d",
+        "tsserver",
+        "eslint",
         "clojure_lsp",
         "rust_analyzer",
         "go-debug-adapter",
