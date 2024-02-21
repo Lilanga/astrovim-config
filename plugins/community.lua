@@ -6,9 +6,15 @@ return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
 
+  -- copilot + cmp extension
+  { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   -- code runner
   -- Overseer task runner & job management
   { import = "astrocommunity.code-runner.overseer-nvim" },
+
+  -- diagnostics
+  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
 
   -- color
   -- color picker and highlighter
