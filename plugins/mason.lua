@@ -1,5 +1,7 @@
 -- customize mason plugins
 return {
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+  {'hrsh7th/cmp-nvim-lsp'},
   {"neovim/nvim-lspconfig"},
   -- use mason-lspconfig to configure LSP installations
   {
@@ -19,6 +21,7 @@ return {
         "prettier",
         "tsserver",
         "eslint",
+        "biome",
         "clojure_lsp",
         "rust_analyzer",
         "go-debug-adapter",

@@ -82,6 +82,17 @@ return {
     require("nvim-autopairs").setup()
     require("notify").setup()
     require("lspkind").init()
+
+    require('mason').setup()
+    require('mason-lspconfig').setup()
+    
+    local lspconfig = require('lspconfig')
+    local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+    
+    lspconfig.lua_ls.setup({
+      capabilities = lsp_capabilities,
+    })
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
