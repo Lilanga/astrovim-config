@@ -83,7 +83,15 @@ return {
     require("notify").setup()
     require("lspkind").init()
 
-    require('mason').setup()
+    require('mason').setup({
+    ui = {
+        icons = {
+            package_installed = "",
+            package_pending = "",
+            package_uninstalled = "",
+        },
+    }
+})
     require('mason-lspconfig').setup()
     
     local lspconfig = require('lspconfig')
