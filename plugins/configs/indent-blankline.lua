@@ -1,7 +1,8 @@
 return function(_, opts)
 -- create the highlight groups in the highlight setup hook, so they are reset
 -- every time the colorscheme changes
-require "ibl.hooks".register(hooks.type.HIGHLIGHT_SETUP, 
+local hooks = require "ibl.hooks"
+require "ibl.hooks".register(hooks.type.HIGHLIGHT_SETUP,
     function()
         vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
         vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
@@ -14,7 +15,7 @@ require "ibl.hooks".register(hooks.type.HIGHLIGHT_SETUP,
 )
 
 require("ibl").setup {
-    indent = { 
+    indent = {
         highlight = {
             "RainbowRed",
             "RainbowYellow",
@@ -23,7 +24,7 @@ require("ibl").setup {
             "RainbowGreen",
             "RainbowViolet",
             "RainbowCyan",
-        } 
-    } 
+        }
+    }
 }
 end
