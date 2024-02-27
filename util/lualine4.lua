@@ -10,6 +10,19 @@ local colors = {
     grey = '#666699',
   }
   
+  local icons = {
+    git = {
+      added    = " ",
+      modified = " ",
+      removed  = " ",
+    },
+    diagnostics = {
+      Error = " ",
+      Warn  = " ",
+      Hint  = " ",
+      Info  = " ",
+    },
+  }
   local theme = {
     normal = {
       a = { fg = colors.white, bg = colors.yellow },
@@ -63,7 +76,8 @@ local colors = {
   
   local utils = require "user.util.utils"
   local function lsp_clients()
-    local clients = vim.lsp.get_active_clients()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local clients = vim.lsp.buf_get_clients(bufnr)
     local clients_list = {}
     for _, client in pairs(clients) do
       table.insert(clients_list, client.name)
@@ -90,7 +104,24 @@ local colors = {
       lualine_a = { 'mode' },
       lualine_b = {
         'branch',
-        'diff',
+        {
+          'diff',
+          symbols = {
+            added = icons.git.added,
+            modified = icons.git.modified,
+            removed = icons.git.removed,
+          },
+          source = function()
+            local gitsigns = vim.b.gitsigns_status_dict
+            if gitsigns then
+              return {
+                added = gitsigns.added,
+                modified = gitsigns.changed,
+                removed = gitsigns.removed,
+              }
+            end
+          end,
+        },
         {
           'diagnostics',
           source = { 'nvim' },
@@ -99,6 +130,12 @@ local colors = {
         },
         {
           'diagnostics',
+          symbols = {
+            error = icons.diagnostics.Error,
+            warn = icons.diagnostics.Warn,
+            info = icons.diagnostics.Info,
+            hint = icons.diagnostics.Hint,
+          },
           source = { 'nvim' },
           sections = { 'warn' },
           diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
