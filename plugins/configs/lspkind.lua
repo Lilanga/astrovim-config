@@ -1,6 +1,7 @@
-return function(_, opts) require("lspkind").init({
-    with_text = true,
-    symbol_map = {
+return function(_, opts)
+    -- require("lspkind").init({
+    opts.with_text = true
+    opts.symbol_map = {
         Copilot = "",
         Text = "",
         Method = "",
@@ -27,10 +28,9 @@ return function(_, opts) require("lspkind").init({
         Event = "",
         Operator = "",
         TypeParameter = "",
-    },
-})
+    }
+    -- })
+    opts.preset = "codicons"
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
-
+    vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 end
-

@@ -11,7 +11,7 @@ return {
     timeoutlen = 420,
     termguicolors = true,  -- enable 24-bit RGB color in the TUI
     -- neovide font family & size
-    guifont = "Fira Code:h16",
+    guifont = "VictorMono Nerd Font,Hack Nerd Font,Fira Code:h16:#e-subpixelantialias:antialias=1:autohint=0",
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
